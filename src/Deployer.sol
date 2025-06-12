@@ -7,6 +7,8 @@ contract MinimalContract {
 }
 
 contract Deployer {
+    event ContractCreated(address indexed contractAddress);
+
     address public immutable recipient;
     uint256 public immutable minimalFee;
     mapping(address => uint256) public counts;
@@ -25,6 +27,7 @@ contract Deployer {
         MinimalContract newContract = new MinimalContract();
         newContract.initialize();
 
+        emit ContractCreated(address(newContract));
         counts[msg.sender]++;
     }
 }
