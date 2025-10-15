@@ -12,7 +12,7 @@ contract WheelXGMContract {
         minimalFee = _minimalFee;
     }
 
-    function deploy() public payable {
+    function gm() public payable {
         require(msg.value >= minimalFee, "Insufficient fee");
 
         (bool success, ) = recipient.call{value: msg.value}("");
