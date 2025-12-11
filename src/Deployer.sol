@@ -2,7 +2,6 @@
 pragma solidity ^0.8.13;
 
 contract MinimalContract {
-    // 一个最简单的合约，只包含一个空函数
     function initialize() public {}
 }
 
